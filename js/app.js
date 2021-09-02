@@ -18,23 +18,23 @@ const loadBook = () => {
         const url = `http://openlibrary.org/search.json?q=${searchText}`
         fetch(url)
             .then(response => response.json())
-            .then(data => displayBooks(data.docs))
+            .then(data => displayBooks(data))
     }
 }
 
 // display all book
 const displayBooks = (books) => {
-    document.getElementById('total-result').innerText = `Result: ${books.length}`
+    document.getElementById('total-result').innerText = `Result: ${books.numFound}`
     document.getElementById('error-msg').innerText=''
     
     const bookDetails = document.getElementById('book-details');
     bookDetails.textContent = '';
     // error massege
-    if (books.length === 0) {
+    if (books.docs.length === 0) {
         document.getElementById('error-msg').innerText="Sorry, No Result Found!"
     }
     else {
-        books.forEach(book => {
+        books.docs.forEach(book => {
             const div = document.createElement('div');
             div.classList.add('col');
 
