@@ -7,19 +7,38 @@
     <title>book-archive</title>
     <!-- bootstrap cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <!-- css link -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- style -->
+   <style>
+    .img-height{
+        height: 200px;
+    }
+   </style>
 </head>
 <body>
     
+<section class="backgroung-img">
+    <h1 class="text-center py-4 text-secondary">Welcome To Book Archive!</h1>
+    <!-- search box -->
+    <div class="input-group mb-3 w-50 mx-auto">
+        <input id="search-input" type="text" class="form-control" placeholder="Search Your Favourite Book" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button onclick="loadBook()" class="btn btn-danger" type="button" id="search-button">Search</button>
+      </div>
 
+      <!-- showing total result -->
+      <div id="total-result" class="text-center">
+        <h4 id="search-result"></h4>
+      </div>
+      <!-- error handling -->
+      <div id="error-msg" class="text-center text-danger">
+      
+      </div>
 
-
-
-
-
-
-
+      <!-- display books -->
+        <div class="container">
+            <div id="book-details" class="row row-cols-1 row-cols-md-4 g-4">  
+            </div>
+        </div>
+</section>
 
 
     <!-- bootstra js cdn -->
